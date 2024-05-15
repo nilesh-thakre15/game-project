@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://dd5ma5ysg1775"]
+[gd_scene load_steps=16 format=3 uid="uid://dd5ma5ysg1775"]
 
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_dloxr"]
 [ext_resource type="Texture2D" uid="uid://dx6vjh60elidp" path="res://assets/player/idle/spr_dragon_idle_0.png" id="1_ii0oo"]
 [ext_resource type="Texture2D" uid="uid://bvuecc08v1t06" path="res://assets/player/idle/spr_dragon_idle_1.png" id="2_32rl5"]
 [ext_resource type="Texture2D" uid="uid://c6lacgxx5c873" path="res://assets/player/idle/spr_dragon_idle_2.png" id="3_1go6q"]
@@ -58,9 +59,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3bq4e"]
-radius = 6.0
+radius = 11.0
+height = 36.0
 
 [node name="player" type="CharacterBody2D"]
+script = ExtResource("1_dloxr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -21)
@@ -71,5 +74,5 @@ frame = 9
 frame_progress = 0.0964892
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -27)
+position = Vector2(0, -18)
 shape = SubResource("CapsuleShape2D_3bq4e")
